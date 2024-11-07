@@ -190,7 +190,7 @@ export function ToolbarPlugin() {
 	);
 
 	return (
-		<Group justify="space-between" p="sm">
+		<Group justify="space-between" p="sm" className="bg-lightgray">
 			{isCodeBlock === false ? (
 				<>
 					<Group gap="xs">
