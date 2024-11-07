@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { AuthActions } from '../reducers/AuthReducer';
+import { Exclaimation } from 'assets/icons/Exclaimation';
+import { Vector } from 'assets/icons/Vector';
+import { Clock } from 'assets/icons/Clock';
+import { Notification } from 'assets/icons/Notification';
 
 const Header = () => {
 	const dispatch = useDispatch();
@@ -13,24 +16,22 @@ const Header = () => {
 
 	return (
 		<HeaderWrapper>
-			<div className="container mx-auto">
+			<div className="container mx-2">
 				<Navbar>
 					<Logo>
-						<Link to="/">
-							<b>Margent</b>
-						</Link>
+						<p>File Info</p>
+						<span><Exclaimation /></span>
 					</Logo>
 					<ul>
-						{user === null && (
-							<>
-								<li>
-									<Link to="/login">Login</Link>
-								</li>
-								<li>
-									<Link to="/signup">Signup</Link>
-								</li>
-							</>
-						)}
+						<li>
+							<Vector />
+						</li>
+						<li>
+							<Notification />
+						</li>
+						<li>
+							<Clock />
+						</li>
 						{user !== null && (
 							<>
 								<li>

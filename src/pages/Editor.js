@@ -41,7 +41,7 @@ function Editor() {
 	return (
 		<div className='flex-col min-h-screen flex'>
 			<Header />
-			<Container className='flex flex-row flex-1  justify-between gap-10 w-full'>
+			<Container className='flex flex-row flex-1 justify-between gap-10 w-full'>
 				<div>
 					<LexicalComposer initialConfig={initialConfig}>
 						<ToolbarPlugin />
