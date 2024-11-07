@@ -64,7 +64,6 @@ function Editor() {
 				</div>
 				<AnnotationsListingPlugin />
 			</Container>
-			<Footer />
 		</div >
 	);
 }
