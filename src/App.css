@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	margin: 0;
+	padding: 0;
+	background: rgb(245, 245, 245);
+}
+
+* {
+	font-family: 'Montserrat';
+	font-display: swap;
+}
+
+a {
+	cursor: pointer;
+	font-size: 18px;
+	letter-spacing: 0.1px;
+	line-height: 25px;
+	padding: 0;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #494d55;
+}
+
+
+.info {
+	margin: 10px auto;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px;
+	max-width: 920px;
+	background-color: #fbf9f9;
+}
+
+.editor-placeholder {
+	position: absolute;
+	top: 0px;
+	padding: 10px;
+}
+
+.editor-container {
+	margin: 20px auto;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 20px;
+	max-width: 900px;
+	background-color: #fbf9f9;
+}
+
+.editor-inner {
+	background: #fff;
+	position: relative;
+}
+
+.editor-input {
+	min-height: 150px;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 12px;
+	outline: none;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.editor-input:focus {
+	border-color: #007bff;
+}
+
+.editor-placeholder {
+	color: #999;
+	overflow: hidden;
+	position: absolute;
+	text-overflow: ellipsis;
+	top: 12px;
+	left: 12px;
+	white-space: nowrap;
+	display: inline-block;
+	pointer-events: none;
+}
+
+.annotation-wrapper {
+	position: relative;
+	display: inline-block;
+	padding: 2px 4px;
+	margin: 0 2px;
+}
+
+.annotation-layer {
+	pointer-events: none !important;
+}
+
+.annotation-controls {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.annotation-row {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.annotation-input {
+	flex: 1;
+	padding: 6px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.color-picker {
+	width: 40px;
+	height: 34px;
+	padding: 0;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.annotation-button {
+	padding: 8px 16px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+.annotation-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.annotation-button:not(:disabled):hover {
+	background-color: #0056b3;
+}
+
+.annotation-counts {
+	margin-bottom: 10px;
+}
+
+.annotation-count {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	position: absolute;
+	top: 29px;
+	left: -15px;
+}
+
+.count-badge {
+	background-color: #007bff;
+	color: white;
+	border-radius: 12px;
+	padding: 2px 8px;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+/* [dir="ltr"] {
+	border-left: 2px solid #151513;
+	padding-left: 5px;
+} */
+
+.container {
+	position: relative;
+	background-color: var(--mantine-color-white);
+}
+
+.contentEditable {
+	height: 80vh;
+	width: 100%;
+	border-radius: 4px;
+	outline: none;
+	/* overflow-y: auto; */
+	color: var(--mantine-color-black);
+}
+
+.placeholder {
+	position: absolute;
+	top: var(--mantine-spacing-xs);
+	/* To make placeholder text and cursor appear on the same height/position */
+	padding-top: var(--mantine-spacing-lg);
+	pointer-events: none;
+	color: var(--mantine-color-dark-1);
+}
+
+.contentEditable span[data-comment-instance] {
+	border: 2px solid var(--comment-border-color);
+	padding: 0 4px;
+}
+
+.contentEditable span[data-comment-instance][data-selected] {
+	background-color: var(--comment-bg-color);
+}
+
+.contentEditable span[data-comment-instance][data-nested] {
+	border: 2px dashed var(--comment-border-color);
+}
