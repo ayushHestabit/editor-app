@@ -15,6 +15,7 @@ import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { Footer, Header } from 'components';
+import AnnotationsListingPlugin from 'editors/plugins/AnnotationsListingPlugin';
 
 function Editor() {
 	const { colors } = useMantineTheme();
@@ -40,25 +41,28 @@ function Editor() {
 	return (
 		<div className='flex-col min-h-screen flex'>
 			<Header />
-			<Container className='flex flex-col flex-1 justify-between w-full'>
-				<LexicalComposer initialConfig={initialConfig}>
-					<ToolbarPlugin />
-					<div className='relative'>
-						<Box bg={colorScheme === "dark" ? colors.dark[5] : colors.blue[0]} p="xl">
-							<Paper className={"container"} withBorder p="md">
-								<RichTextPlugin
-									contentEditable={<ContentEditable className={"contentEditable !h-[50vh]"} />}
-									placeholder={<Text className={"placeholder"}>Enter some text...</Text>}
-								/>
-							</Paper>
-						</Box>
-						<AnnotationPlugin />
-						<AnnotationCountPlugin className="absolute left-8 top-5" />
-					</div>
-					<ListPlugin />
-					<LinkPlugin />
-					<HistoryPlugin />
-				</LexicalComposer>
+			<Container className='flex flex-row flex-1  justify-between gap-10 w-full'>
+				<div>
+					<LexicalComposer initialConfig={initialConfig}>
+						<ToolbarPlugin />
+						<div className='relative'>
+							<Box bg={colorScheme === "dark" ? colors.dark[5] : colors.blue[0]} p="xl">
+								<Paper className={"container"} withBorder p="md">
+									<RichTextPlugin
+										contentEditable={<ContentEditable className={"contentEditable !h-[50vh]"} />}
+										placeholder={<Text className={"placeholder"}>Enter some text...</Text>}
+									/>
+								</Paper>
+							</Box>
+							<AnnotationPlugin />
+							<AnnotationCountPlugin className="absolute left-8 top-5" />
+						</div>
+						<ListPlugin />
+						<LinkPlugin />
+						<HistoryPlugin />
+					</LexicalComposer>
+				</div>
+				<AnnotationsListingPlugin />
 			</Container>
 			<Footer />
 		</div >
