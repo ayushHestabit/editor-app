@@ -7,7 +7,6 @@ import { AuthActions } from '../reducers/AuthReducer';
 const Header = () => {
 	const dispatch = useDispatch();
 	const user = useSelector((state) => state.auth.user);
-
 	const logout = () => {
 		dispatch(AuthActions.logout());
 	};
