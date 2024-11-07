@@ -3,7 +3,7 @@ import React from 'react'
 
 const AnnotationsListingPlugin = () => {
 	return (
-		<div className='bg-[#2E3235] w-1/3 rounded-md my-3'>
+		<div className='bg-[#2E3235] w-full'>
 			<div className='border-b pt-4'>
 				<H2 className="text-white">All Annotations</H2>
 			</div>
