@@ -52,10 +52,10 @@ function Editor() {
 								/>
 							</Paper>
 						</Box>
+						<AnnotationPlugin />
 						<AnnotationCountPlugin className="absolute left-8 top-5" />
 					</div>
 					<ListPlugin />
-					<AnnotationPlugin />
 					<LinkPlugin />
 					<HistoryPlugin />
 				</LexicalComposer>

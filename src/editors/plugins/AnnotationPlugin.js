@@ -3,10 +3,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import AnnotationNode from '../nodes/AnnotationNode';
 import { generateRandomUsername } from 'Utilities';
+import { ActionIcon, Card } from "@mantine/core";
+import { IconMessageCirclePlus } from "@tabler/icons-react";
 
 function AnnotationPlugin() {
 	const [editor] = useLexicalComposerContext();
 	const [annotations, setAnnotations] = useState([]);
+	const [isComment, setIsComment] = useState(false);
 	const [currentAnnotation, setCurrentAnnotation] = useState({
 		annotationText: '',
 		comment: '',
@@ -79,40 +82,53 @@ function AnnotationPlugin() {
 				comment: '',
 				user: randomUser,
 			}));
+			setIsComment(false)
 		}
 	};
 
 	return (
-		<div className="annotation-controls">
-			<div className="annotation-row">
-				<input
-					type="text"
-					placeholder="Add comment"
-					value={currentAnnotation.comment}
-					onChange={(e) => setCurrentAnnotation(prev => ({
-						...prev,
-						comment: e.target.value
-					}))}
-					className="annotation-input"
-				/>
-				<input
-					type="color"
-					value={currentAnnotation.color}
-					onChange={(e) => setCurrentAnnotation(prev => ({
-						...prev,
-						color: e.target.value
-					}))}
-					className="color-picker"
-				/>
+		<>
+			<div className='comment-card'>
+				<Card pos="fixed" p="sm" radius="xl" withBorder>
+					<ActionIcon mb="sm" radius="lg">
+						<IconMessageCirclePlus onClick={() => setIsComment(true)} />
+					</ActionIcon>
+					<IconMessageCirclePlus onClick={() => console.log("DDD")} />
+				</Card>
 			</div>
-			<button
-				onClick={handleAnnotateClick}
-				className="annotation-button"
-				disabled={!currentAnnotation.comment}
-			>
-				Add Annotation
-			</button>
-		</div>
+			{isComment &&
+				<div className="annotation-controls">
+					<div className="annotation-row">
+						<input
+							type="text"
+							placeholder="Add comment"
+							value={currentAnnotation.comment}
+							onChange={(e) => setCurrentAnnotation(prev => ({
+								...prev,
+								comment: e.target.value
+							}))}
+							className="annotation-input"
+						/>
+						<input
+							type="color"
+							value={currentAnnotation.color}
+							onChange={(e) => setCurrentAnnotation(prev => ({
+								...prev,
+								color: e.target.value
+							}))}
+							className="color-picker"
+						/>
+					</div>
+					<button
+						onClick={handleAnnotateClick}
+						className="annotation-button"
+						disabled={!currentAnnotation.comment}
+					>
+						Add Annotation
+					</button>
+				</div>
+			}
+		</>
 	);
 }
 
