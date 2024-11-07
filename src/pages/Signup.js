@@ -1,6 +1,5 @@
 import React from 'react';
-import { Header, Footer, TextInput, H2, Button } from '../components';
-import styled from 'styled-components';
+import { TextInput, H2, Button } from '../components';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import apiRequest, { showToast } from '../Utilities';

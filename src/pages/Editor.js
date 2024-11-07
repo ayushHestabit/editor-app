@@ -14,7 +14,7 @@ import { Box, Container, Paper, Text, useMantineColorScheme, useMantineTheme } f
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { Footer, Header } from 'components';
+import { Header } from 'components';
 import AnnotationsListingPlugin from 'editors/plugins/AnnotationsListingPlugin';
 
 function Editor() {
@@ -64,7 +64,6 @@ function Editor() {
 				</div>
 				<AnnotationsListingPlugin />
 			</Container>
-			<Footer />
 		</div >
 	);
 }
